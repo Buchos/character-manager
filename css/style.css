@@ -1,0 +1,82 @@
+#discover{
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+   
+    margin-right: 5px;
+   padding-bottom: 5px;
+}
+.bottomline{
+    display: table-cell;
+    vertical-align: text-bottom;
+}
+#short-d{
+    color: sienna;
+    
+}
+#name{
+    color: sienna;
+    vertical-align: top;
+}
+header{
+    height: 40px;
+    border-bottom: 3px solid #7c4724;
+    padding: 0;
+}
+ul{
+    list-style-type: none;
+    top: 0;
+    background-color: slategrey;
+    left: 0;
+    right: 0;
+    margin-top: auto;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+}
+li{
+    padding: 5px;
+    text-shadow: 0 0 2px rgb(153, 152, 152);
+    font-family: "Notable regular",Arial, Helvetica, sans-serif;
+    border-color: rgb(136, 100, 83);
+    border-right: 2px solid;
+    border-left: 2px solid;
+}
+main{
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    max-width: 868px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 25px;
+}
+body{
+font-family: Arial, Helvetica, sans-serif;
+}
+@font-face {
+	font-family: "Notable regular";
+    src: url('../Notable/Notable-Regular.ttf');
+}
+a{
+    text-decoration: none;
+    color: sienna;
+}
+a:hover{
+    text-decoration: none;
+    color: rgb(214, 142, 108);
+}
+table{
+    width: 150px;
+    border-collapse: collapse;
+    
+}
+td{
+    border: 1px solid sienna;
+    height: 90px;
+    line-height: 5px;
+    font-size: 10px;
+    margin-top: 5px;
+
+    background-color: rgba(223, 130, 87, 0.507);
+}
