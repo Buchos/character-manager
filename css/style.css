@@ -28,8 +28,12 @@
     white-space: wrap;
     resize: none;
     grid-column: 2;
-
-
+}
+.creaclass{
+    text-align: center;
+    color: sienna;
+    font-size: 30px;
+    font-family: "Notable Regular",Arial, Helvetica, sans-serif;
 }
 .name{
     grid-column: 2;
