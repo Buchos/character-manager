@@ -10,6 +10,24 @@
     display: table-cell;
     vertical-align: text-bottom;
 }
+.input{
+    display: flex;
+    align-items: center;
+}
+.inputdescription{
+    display: flex;
+    align-items: top;
+}
+.description{
+    width: 550px;
+    min-width: 300px;
+    height: 150px;
+    vertical-align: top;
+    word-break: break-all;
+    white-space: wrap;
+
+}
+
 #short-d{
     color: sienna;
     
@@ -76,7 +94,7 @@ table{
     border-collapse: collapse;
     margin-left: auto;
     margin-right: auto;
-    
+
     
 }
 td{
