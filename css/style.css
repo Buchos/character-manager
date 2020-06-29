@@ -13,6 +13,7 @@
 .input{
     display: flex;
     align-items: center;
+
 }
 .inputdescription{
     display: flex;
@@ -25,7 +26,13 @@
     vertical-align: top;
     word-break: break-all;
     white-space: wrap;
+    resize: none;
+    grid-column: 2;
 
+
+}
+.name{
+    grid-column: 2;
 }
 
 #short-d{
@@ -72,6 +79,7 @@ main{
     background: rgb(230, 206, 176);
     padding-left: 25px;
     padding-right: 25px;
+    margin-top: 10px;
 
 }
 body{
@@ -105,4 +113,7 @@ td{
     margin-top: 5px;
 
     background-color: rgba(223, 130, 87, 0.507);
+}
+em{
+    padding: 10px;
 }
