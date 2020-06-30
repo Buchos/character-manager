@@ -36,14 +36,40 @@ fetch("https://character-database.becode.xyz/characters")
     
     
     // lors du click sur le bouton delete propre a chaque perso, demande de confirmation et suppression du perso concerné
-document.getElementsByClassName("fa-window-close").addEventListener("click", () => {
-    if (confirm ("Are you sure you want to delete this character ?")) {
-        fetch("https://character-database.becode.xyz/characters/" + id, {
-            method: "DELETE"
-        })
-    } else {
-        location.reload
-    };
+    function deleteCharacter(id) {
+
+        const characterObject = JSON.stringify({
+
+            id: id
+
+          });
+
+          let url = "https://character-database.becode.xyz/characters/" + id;
+          
+          fetch(url, {
+            method: "DELETE",
+            headers: new Headers({
+              "content-type": "application/json"
+            })
+          })
+
+          .then(response => response.json())
+          .then(data => console.log(data))
+          .catch(err => console.error(err));
+
+      }
+
+      let confirmBox = confirm("Are you sure you want to delete this character ?");
+
+      document.getElementsByClassName("fa-window-close").addEventListener("click", () => {
+        if(confirmBox === true) {
+      
+            //delete character
+            let indexFromDataDeleteCharacter = e.target.getAttribute("data-deleteCharacter");
+            deleteCharacter(indexFromDataDeleteCharacter);
+            
+            }
+      })
 
 
     
@@ -68,4 +94,3 @@ document.getElementsByClassName("fa-window-close").addEventListener("click", () 
     //             });
     //         });
     // });
-});
