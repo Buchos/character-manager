@@ -6,18 +6,18 @@
       character manager
     </title>
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="style.css" />
-    <script src="src/js/script.js" async></script>
+    <script src="src/js/script.js" defer></script>
   </head>
   <body>
     <header>
       <ul>
         <li><a href="index.html">album</a></li>
-        <li><a href="editpage.html">+ edit</a></li>
-        <li><input type="search" class="search"></li>
+        <li><a href="editpage.html">+ ADD</a></li>
+        <li><input type="search" class="search" id="searchName"></li>
+        <li><button id="searchChar">Search</button></li>
       </ul>
     </header>
-    <main >
+    <main>
       <section class="main-grid rowno">
         <template id="template">
           <table class="card">
@@ -25,21 +25,27 @@
               <td class="cellimg">
                 <img class="pic" src="" alt="" />
               </td>
-            </tr><tr>
+            </tr>
+            <tr>
               <td class="celltext">
                 <h3 class="name"></h3>
                 <p class="descr-short"></p>
-                <p class="link"><a href="" >discover more...</a></p>
-                <p class="icon"><i class="far fa-edit fa-2x"></i>
-                <i class="far fa-window-close fa-2x"></i></p>
-          </td>
-          </tr>
+                <p class="descr-long"></p>
+                <p class="link"><a href="">discover more...</a></p>
+                <p class="icon">
+                  <i class="far fa-edit fa-2x" class="editChar"></i>
+                  <i class="far fa-window-close fa-2x" class="deleteChar"></i>
+                </p>
+              </td>
+            </tr>
           </table>
         </template>
         <section id="target" class="cards"></section>
       </section>
     </main>
-    <script src="https://kit.fontawesome.com/1815b8a69b.js" crossorigin="anonymous"></script>
-
+    <script
+      src="https://kit.fontawesome.com/1815b8a69b.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
