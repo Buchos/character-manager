@@ -6,6 +6,7 @@
       character manager
     </title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="style.css" />
     <script src="src/js/script.js" async></script>
   </head>
   <body>
@@ -13,19 +14,32 @@
       <ul>
         <li><a href="index.html">album</a></li>
         <li><a href="editpage.html">+ edit</a></li>
+        <li><input type="search" class="search"></li>
       </ul>
     </header>
-    <main>
-      <section class="main-grid">
+    <main >
+      <section class="main-grid rowno">
         <template id="template">
-          <article class="card">
-            <img class="pic" src="" alt="" />
-            <h3 class="name"></h3>
-            <p class="descr-short"></p>
-          </article>
+          <table class="card">
+            <tr>
+              <td class="cellimg">
+                <img class="pic" src="" alt="" />
+              </td>
+            </tr><tr>
+              <td class="celltext">
+                <h3 class="name"></h3>
+                <p class="descr-short"></p>
+                <p class="link"><a href="" >discover more...</a></p>
+                <p class="icon"><i class="far fa-edit fa-2x"></i>
+                <i class="far fa-window-close fa-2x"></i></p>
+          </td>
+          </tr>
+          </table>
         </template>
         <section id="target" class="cards"></section>
       </section>
     </main>
+    <script src="https://kit.fontawesome.com/1815b8a69b.js" crossorigin="anonymous"></script>
+
   </body>
 </html>

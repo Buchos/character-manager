@@ -38,7 +38,11 @@
 .name{
     grid-column: 2;
 }
-
+h3{
+    color: saddlebrown;
+    font-size: 15px;
+    vertical-align: top;
+}
 #short-d{
     color: sienna;
     
@@ -55,10 +59,37 @@
     display: flex;
     flex-flow: row wrap;
 }
+
+  .cellimg{
+      display: flex;
+      justify-content: center;
+      background-color: rgb(121, 98, 82);
+  }
+
+  .celltext{
+      line-height: 15px;
+      padding-left: 5px;
+  }
+  .search{
+vertical-align: center;
+  }
+  .link{
+      text-align: end;
+      margin-right: 10px;
+  }
 header{
-    height: 40px;
+    height: 70px;
     border-bottom: 3px solid #7c4724;
     padding: 0;
+    z-index: 1;
+    margin-bottom: 10px;
+}
+.icon{
+    color: sienna;
+    padding: 5px;
+    display: flex;
+    justify-content: space-evenly;
+
 }
 ul{
     list-style-type: none;
@@ -67,18 +98,19 @@ ul{
     left: 0;
     right: 0;
     margin-top: auto;
+    padding-top: 10px;
     position: fixed;
     display: flex;
     flex-direction: row;
+    align-items: center;
     height: 40px;
+    padding-bottom: 15px;
 }
 li{
     padding: 5px;
     text-shadow: 0 0 2px rgb(153, 152, 152);
     font-family: "Notable regular",Arial, Helvetica, sans-serif;
-    border-color: rgb(136, 100, 83);
-    border-right: 2px solid;
-    border-left: 2px solid;
+
 }
 main{
     grid-template-columns: 1fr 1fr 1fr;
@@ -89,9 +121,11 @@ main{
     padding-top: 25px;
     padding-bottom: 150px;
     background: rgb(230, 206, 176);
+    border: 1.5px solid rgb(231, 211, 187);
     padding-left: 25px;
     padding-right: 25px;
-    margin-top: 10px;
+    margin-top: 30px;
+    border-radius: 10px;
 
 }
 body{
@@ -110,16 +144,16 @@ a:hover{
     color: rgb(214, 142, 108);
 }
 table{
-    width: 150px;
+    width: 200px;
     border-collapse: collapse;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 40px;
+    margin-top: 0;
 
     
 }
 td{
     border: 1px solid sienna;
-    height: 90px;
+    height: 120px;
     line-height: 5px;
     font-size: 10px;
     margin-top: 5px;
@@ -129,3 +163,10 @@ td{
 em{
     padding: 10px;
 }
+section{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+
+}
+

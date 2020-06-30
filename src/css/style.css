@@ -10,7 +10,7 @@ img {
     width: 85vw;
     height: 95vh;
   }
-  
+
   .main-grid .cards {
     display: -ms-grid;
     display: grid;
@@ -44,13 +44,14 @@ img {
     -ms-grid-column-align: center;
         justify-self: center;
   }
+
   
   .card .name {
     text-align: center;
     margin: 0;
-    -ms-flex-item-align: center;
+    -ms-flex-item-align: flex-start;
         -ms-grid-row-align: center;
-        align-self: center;
+        align-self: flex-start;
   }
   
   .card .descr-short {
@@ -58,3 +59,4 @@ img {
     margin-left: 15px;
     margin-right: 15px;
   }
+  
