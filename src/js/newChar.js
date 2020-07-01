@@ -4,8 +4,9 @@ document.getElementById("submit").addEventListener('click', () => {
     let nameInputValue = document.getElementById("name").value;
     let shortDescriptionValue = document.getElementById("shortDescription").value;
     let fullDescriptionValue = document.getElementById("description").value
+    let imageValue = document.getElementById("image").value
     
-    if(nameInputValue == false || shortDescriptionValue == false || fullDescriptionValue == false){
+    if(nameInputValue == false ){
       alert('The form has to be completed to create a new character'); 
     } else {
       createCharacter();
@@ -17,7 +18,7 @@ document.getElementById("submit").addEventListener('click', () => {
         name : nameInputValue,
         shortDescription : shortDescriptionValue,
         description: fullDescriptionValue,
-        
+        image: imageValue
       }
 
       const newCharacterInApi = await fetch("https://character-database.becode.xyz/characters", {
