@@ -8,73 +8,82 @@ fetch("https://character-database.becode.xyz/characters")
     .then((response) => response.json())
     .then((response) => {
         const charsArray = response;
+
+        let i = 0
+        
         charsArray.forEach((element) => {
             const copy = document.importNode(temp.content, true);
             copy.querySelector(".pic").src = `data:image/gif;base64,${element.image}`;
             copy.querySelector(".name").innerHTML = element.name;
             copy.querySelector(".descr-short").innerHTML = element.shortDescription;
             target.appendChild(copy);
+            let iconId = document.createElement("i")
+            iconId.classList.add("dododo")
+            iconId.setAttribute("meta-icon-id", element.id)
+            iconId.innerHTML = "delete"
+            document.getElementById("delete").appendChild(iconId)
+            // let deletebutton = querySelectorAll(".deleteButton")
+            // deletebutton[index].appendChild(iconId)
+            i++;
         });
     });
 
     
-    // Lors du click sur le boutton edit propre a chaque perso, passage sur la page de modification des personages
-        // document.getElementsByClassName("fa-edit").addEventListener("click", () => {
-        //     fetch("https://character-database.becode.xyz/characters/" + id, {
-        //         method: "PUT",
-        //         body: JSON.stringify({
-        //             name: charName,
-        //             shortDescription: charShortDescription,
-        //             description: charDescription,
-        //             image: charImage,
-        //         })
-        //     })
-        //     .then(response => response.json())
-            
-        //     });
+    //Lors du click sur le boutton edit propre a chaque perso, passage sur la page de modification des personages
+    async function updateCharacter(id) {
+        let url = "https://character-database.becode.xyz/characters/" + id;
+          
+        fetch(url, {
+          method: "PUT",
+          headers: new Headers({
+            "content-type": "application/json"
+          })
+        })
+
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(err => console.error(err));
+      }
     
     
     // lors du click sur le bouton delete propre a chaque perso, demande de confirmation et suppression du perso concerné
-    function deleteCharacter(id) {
-
-        const characterObject = JSON.stringify({
-
-            id: id
-
-          });
-
-          let url = "https://character-database.becode.xyz/characters/" + id;
+    async function deleteCharacter(id) {
+      if ( confirm( "Are you sure you want to delete this character ?") ) {
+        // Code à éxécuter si le l'utilisateur clique sur "OK"
+        let url = "https://character-database.becode.xyz/characters/" + id;
           
-          fetch(url, {
-            method: "DELETE",
-            headers: new Headers({
-              "content-type": "application/json"
-            })
+        fetch(url, {
+          method: "DELETE",
+          headers: new Headers({
+            "content-type": "application/json"
           })
+        })
 
-          .then(response => response.json())
-          .then(data => console.log(data))
-          .catch(err => console.error(err));
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(err => console.error(err));
+    } else {
+        // Code à éxécuter si l'utilisateur clique sur "Annuler" 
+        window.location.reload()
+
+          
+    }
+
 
       }
-    let array = document.getElementsByClassName("deleteButton");
-    console.log (array);
-    console.log (array[2]);
-    for (let i=0; i<array.length; i++){
-        console.log ("bjr")
 
-    }
-      
-      document.getElementsByClassName("fa-window-close").addEventListener("click", () => {
-    //       let confirmBox = confirm("Are you sure you want to delete this character ?");
-    //       if(confirmBox === true) {
-      
-    //         let indexFromDataDeleteCharacter = e.target.getAttribute("data-deleteCharacter");
-    //         deleteCharacter(indexFromDataDeleteCharacter);
-            
-    //         }
-        console.log (id)
-      })
+
+
+    document.querySelector("body").addEventListener("click", e => {
+
+      if (e.target.classList.contains("dododo")) {
+        deleteCharacter(e.target.getAttribute("meta-icon-id"))
+
+      }
+
+    })
+
+    
 
 
     
@@ -102,3 +111,4 @@ fetch("https://character-database.becode.xyz/characters")
         //             });
         //         });
         // });
+  
